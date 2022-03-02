@@ -1,0 +1,25 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Credit widgets - example</title>
+   </head>
+   <script src="https://payu.security-training.pl/widget-cash-loan.js"></script>
+   <body>
+      <h2>Cash loan widget:</h2>
+      <p><span id="cash-loan-widget"></span></p>
+      <script type="text/javascript">
+             var options = {
+               offerId: 'TEST_PAYU_OFFER_ID'         // identyfikator oferty przekazany przez PayU
+             };
+             OpenPayU.Installments.cashLoanWidget('#cash-loan-widget', options)
+                 .then(function(result) {
+                     // Ten fragment kodu zostanie wykonany po pokazaniu widżetu
+                     // obiekt 'result' przekazany w parametrze funkcji udostępnia dodatkowe opcje;
+                     // przykładowe użycie w FAQ pkt. 5
+                 })
+                 .catch(function(e)  {
+                     console.error(e.toString()); // Wypisanie błędów konfiguracji na konsolę
+                 });
+      </script>
+   </body>
+</html>
